@@ -1,33 +1,175 @@
-.App {
-  text-align: center;
+body {
+  padding: 3em 0;
+}
+.timeline{
+  margin: 10px;
+}
+.header{
+  display: flex;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.header div {
+  font-size: 32px;
+  margin: 0px 780px 0px 0px ;
+}
+.header h2 {
+  font-size: 22px;
+  margin: 0px 280px 0px 0px ;
+}
+.timeline .row{
+  margin-left: 10%;
+}
+.left-img{
+  margin-left: -190px;
+  width: 120px;
+  height: 100px;
+}
+.left-img-incomplete{
+  margin-left: -190px;
+  width: 120px;
+  height: 100px;
+  outline: 3px solid gray;
+}
+.right-img{
+border: 2px solid red;
+width: 120px;
+
+margin-top: -100px; 
+height: 100px;
+}
+.right-img-complete{
+  outline: 5px solid green;
+  width: 120px;
+  height: 100px;
+margin-top: -100px; 
+  }
+.left-img P{
+  margin-left: -190px;
+  background: red;
+  width: 120px;
+  height: 100px;
+}
+.step-body{
+  padding: 10px 100px;
+  display: flex;
+  justify-content: center;
+}
+/* Colors */
+/* Stepper Styling */
+.stepper-container {
+  background-color: rgba(255, 255, 255, 0.25);
+  padding: 1rem;
+  margin-bottom: 2em;
+  border-radius: 5em;
+
+}
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+}
+.step:after {
+  content: '';
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 3px;
+  top: -5px;
+  background-color: #d8dce1;
+}
+.step:before {
+  content: '';
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 3px;
+  top: -5px;
+  background-color: #d8dce1;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+.step:last-child:after {
+  display: none;
+}
+.step:first-child {
+  flex-basis: 70%;
+}
+.step:first-child:before {
+  display: none;
+}
+.step.active {
+  color: white;
+}
+.step.active:before, .step.active:after {
+  background-color: #1eb53a;
+}
+.step.active + .step:not(.active):before {
+  background-color: #1eb53a;
+}
+.step-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
+.active .step-circle {
+  background-color: #1eb53a;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.step-circle {
+  height: 30px;
+  width: 30px;
+  border-radius: 20px;
+  background-color: #d8dce1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  font-size: 12px;
+}
+.step-circle-black{
+  height: 20px;
+  width: 30px;
+  border-radius: 20px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.vertical .stepper {
+  flex-direction: column;
+}
+.vertical .step {
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 9em;
+}
+.vertical .step:after {
+  display: inline;
+  width: 3px;
+  position: absolute;
+  height: 100%;
+  left: 0.85em;
+  top: 0.5em;
+  z-index: -1;
+}
+.vertical .step:before {
+  display: none;
+}
+.vertical .step:last-child:after {
+  display: none;
+}
+.vertical .step-content {
+  margin-left: 1em;
+  margin-top: -0.5em;
+  color: #3c4859;
 }
